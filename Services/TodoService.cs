@@ -11,11 +11,16 @@ namespace Services
     {
         IMapper mapper;
         ITodoRepository repository;
-        public TodoService()
+
+        public TodoService(): this(new AutoMapperConfig(), new TodoRepository())
         {
-            var config = AutoMapperConfig.CreateConfiguration();
-            mapper = config.CreateMapper();
-            repository = new TodoRepository();
+        }
+
+        public TodoService(AutoMapperConfig mapperConfig, TodoRepository repository)
+        {
+            var config = mapperConfig.CreateConfiguration();
+            this.mapper = config.CreateMapper();
+            this.repository = repository;
         }
 
         public IEnumerable<TodoDto> Get()

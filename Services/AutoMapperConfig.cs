@@ -7,9 +7,9 @@ using System.Text;
 
 namespace Services
 {
-    public static class AutoMapperConfig
+    public class AutoMapperConfig
     {
-        public static MapperConfiguration CreateConfiguration()
+        public MapperConfiguration CreateConfiguration()
         {
             return new MapperConfiguration(cfg => {
                 cfg.CreateMap<Todo, TodoDto>();
