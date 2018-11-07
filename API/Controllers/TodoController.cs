@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Core;
 using Core.Dtos;
+using DI;
 using Microsoft.AspNetCore.Mvc;
 using Services;
 
@@ -17,7 +18,7 @@ namespace API.Controllers
         private ITodoService todoService;
         public TodoController()
         {
-            this.todoService = new TodoService();
+            this.todoService = Bootstrapper.Resolve<ITodoService>();
         }
 
         // GET: api/todos

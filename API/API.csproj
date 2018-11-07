@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj" />
+    <ProjectReference Include="..\DI\DI.csproj" />
     <ProjectReference Include="..\Services\Services.csproj" />
   </ItemGroup>
 

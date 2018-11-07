@@ -12,14 +12,9 @@ namespace Services
         IMapper mapper;
         ITodoRepository repository;
 
-        public TodoService(): this(new AutoMapperConfig(), new TodoRepository())
+        public TodoService(IMapper mapper, TodoRepository repository)
         {
-        }
-
-        public TodoService(AutoMapperConfig mapperConfig, TodoRepository repository)
-        {
-            var config = mapperConfig.CreateConfiguration();
-            this.mapper = config.CreateMapper();
+            this.mapper = mapper;
             this.repository = repository;
         }
 
