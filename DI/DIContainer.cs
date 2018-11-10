@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DI
 {
-    public static class Bootstrapper
+    public static class DIContainer
     {
         public static Container CurrentContainer { get; set; }        
 

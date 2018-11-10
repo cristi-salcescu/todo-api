@@ -18,7 +18,7 @@ namespace API.Controllers
         private ITodoService todoService;
         public TodoController()
         {
-            this.todoService = Bootstrapper.Resolve<ITodoService>();
+            this.todoService = DIContainer.Resolve<ITodoService>();
         }
 
         // GET: api/todos
